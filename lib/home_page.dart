@@ -19,9 +19,9 @@ class _InboxPageState extends State<InboxPage> {
               backgroundColor: Colors.orange,
               bottom: TabBar(
                 tabs: [
-                  Tab(text: 'Messages',),
-                  Tab(text:'Taps',),
-                  Tab(text:'Albums',)
+                  Tab(text: 'Messages'),
+                  Tab(text:'Taps'),
+                  Tab(text:'Albums'),
                 ],
               ),
             ),

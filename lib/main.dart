@@ -16,9 +16,10 @@ class MyApp extends StatelessWidget {
       title: appTitle,
       color: Colors.orange,
 
-      //home: MyHomePage(title: appTitle,),
+      home: MyHomePage(title: appTitle,),
       //home: InboxPage(),
-      home: LoginPage(),
+      //home: LoginPage(),
+
     );
   }
 }
@@ -30,7 +31,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title, style:GoogleFonts.acme()),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.orangeAccent,
       ),
 
       //Here Drawer scroll
@@ -40,7 +41,7 @@ class MyHomePage extends StatelessWidget {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blueGrey,
+                color: Colors.orangeAccent,
               ),
               child: Text('Browse\nAccount',
                 style:TextStyle(fontWeight:FontWeight.bold, fontSize: 20),),
@@ -118,6 +119,7 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
+
 
     );
   }

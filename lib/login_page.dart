@@ -24,22 +24,23 @@ class LoginPage extends StatelessWidget {
               children: [
                 TextFormField(
                   decoration: InputDecoration(
-                    hintText: "Enter user name", labelText: "Email",
+                    hintText: "Enter user name",labelText: "Email",
                   ),
                 ),
                 TextFormField(
                   decoration: InputDecoration(
-                    hintText: "Enter your password ", labelText: "Password",
+                    hintText: "Enter your password ",labelText: "Password",
                   ),
                 ),
                 SizedBox(
                   height: 20,
                 ),
-                ElevatedButton(onPressed: (){},child:Text('Login')),
+                ElevatedButton(child:Text('Login'),
+                  onPressed: (){},
+                ),
               ],
             ),
           ),
-
         ],
       ));
   }
