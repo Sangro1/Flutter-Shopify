@@ -5,7 +5,6 @@ class InboxPage extends StatefulWidget {
   @override
   State<InboxPage> createState() => _InboxPageState();
 }
-
 class _InboxPageState extends State<InboxPage> {
   @override
   Widget build(BuildContext context) {
