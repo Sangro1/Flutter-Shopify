@@ -40,7 +40,9 @@ class _LoginPageState extends State<LoginPage> {
                   onChanged:(value){
                         name = value;
                         //call setSate because we reload this StatefulWidget again
-                    setState((){});
+                    setState((){
+
+                    });
                 },
                 ),
 
@@ -71,7 +73,9 @@ class _LoginPageState extends State<LoginPage> {
                     color: Colors.white,
                     ): Text('Login',
                       style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
                     ),
                     decoration: BoxDecoration(
@@ -83,8 +87,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-
-
 
                 // ElevatedButton(
                 //   child:Text('Login'),
