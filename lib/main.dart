@@ -53,7 +53,8 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.blueGrey,
       ),
-      //Here Drawer scroll
+
+      //Here Drawer scrollloginRoute
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -64,7 +65,7 @@ class MyHomePage extends StatelessWidget {
               ),
 
               child: Text('Browse\n Account',
-                style:TextStyle(fontWeight:FontWeight.bold, fontSize:25,),),
+                style:TextStyle(fontWeight:FontWeight.bold, fontSize:30,),),
             ),
 
             SizedBox(height: 40, child:TextButton(
@@ -82,24 +83,24 @@ class MyHomePage extends StatelessWidget {
               thickness: 3,
             ),
             Text('Trending', style: TextStyle(
-                fontWeight:FontWeight.bold,fontSize:20),),
+                fontWeight:FontWeight.bold,fontSize:22),),
             //items list
             ListTile(
               title: const Text('Best Sellers',),
               onTap: () {
-                Navigator.pushNamed(context,'/SecondPage');
+                Navigator.pushNamed(context,MyRoutes.secondRoute);
               },
             ),
             ListTile(
               title: const Text('New Releases'),
               onTap: () {
-                Navigator.pushNamed(context,'/SecondPage');
+                Navigator.pushNamed(context,MyRoutes.secondRoute);
               },
             ),
             ListTile(
               title: const Text('Movers and Shakers'),
               onTap: () {
-                Navigator.pushNamed(context,'/SecondPage');
+                Navigator.pushNamed(context,MyRoutes.secondRoute);
               },
             ),
             Divider(
@@ -108,30 +109,30 @@ class MyHomePage extends StatelessWidget {
             ),
             Text('Top Categories For You',
               style: TextStyle(
-                  fontWeight:FontWeight.bold,fontSize:20),),
+                  fontWeight:FontWeight.bold,fontSize:22),),
 
             ListTile(
               title: const Text('Mobiles'),
               onTap: () {
-                Navigator.pushNamed(context,'/SecondPage');
+                Navigator.pushNamed(context, MyRoutes.secondRoute);
               },
             ),
             ListTile(
               title: const Text('Computers'),
               onTap: () {
-                Navigator.pushNamed(context,'/SecondPage');
+                Navigator.pushNamed(context,MyRoutes.secondRoute);
               },
             ),
             ListTile(
               title: const Text('Books'),
               onTap: () {
-                Navigator.pushNamed(context,'/SecondPage');
+                Navigator.pushNamed(context,MyRoutes.secondRoute);
               },
             ),
             ListTile(
               title: const Text('Fashion'),
               onTap: () {
-                Navigator.pushNamed(context,'/SecondPage');
+                Navigator.pushNamed(context,MyRoutes.secondRoute);
               },
             ),
             TextButton(
@@ -144,7 +145,8 @@ class MyHomePage extends StatelessWidget {
               color: Colors.grey,
               thickness: 3,
             ),
-            Text('Programs & Features', style: TextStyle(fontWeight:FontWeight.bold,fontSize:20),),
+            Text('Programs & Features', style:
+            TextStyle(fontWeight:FontWeight.bold,fontSize:22),),
             ListTile(
               title: const Text('Today Deals'),
               onTap: () {

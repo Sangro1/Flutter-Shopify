@@ -11,7 +11,6 @@ class ShopCate extends StatelessWidget {
         backgroundColor: Colors.blueGrey,
         elevation: 20,
         title:ClipRRect(
-          borderRadius: BorderRadius.circular(16),
           child: Container(
             padding: EdgeInsets.all(8),
             color: Colors.grey[300],
@@ -26,6 +25,7 @@ class ShopCate extends StatelessWidget {
               ],
             ),
           ),
+          borderRadius: BorderRadius.circular(16),
         ),
       ),
       body: ExploreGrid(),
