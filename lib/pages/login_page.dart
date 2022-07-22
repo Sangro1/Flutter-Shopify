@@ -1,4 +1,6 @@
+import 'package:example1/uti/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -27,16 +29,25 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 TextFormField(
+                  obscureText: true,
                   decoration: InputDecoration(
                     hintText: "Enter your password ",labelText: "Password",
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40.0,
                 ),
-                ElevatedButton(child:Text('Login'),
-                  onPressed: (){},
+                ElevatedButton(
+                  child:Text('Login'),
+                  style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+                  onPressed: (){
+                  // old type --Navigator.pushNamed(context, '/');
+                    //new
+                    Navigator.pushNamed(context,  MyRoutes.homeRoute);
+                  },
+
                 ),
+
               ],
             ),
           ),
