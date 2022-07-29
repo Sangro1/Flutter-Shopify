@@ -8,7 +8,7 @@ class ShopCate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.white,
         elevation: 20,
         title:ClipRRect(
           child: Container(
@@ -16,10 +16,10 @@ class ShopCate extends StatelessWidget {
             color: Colors.grey[300],
             child: Row(
               children: [
-                Icon(Icons.search, color: Colors.grey[500],),
+                Icon(Icons.search, color: Colors.grey[300],),
                 Container(
                   child: Text('Search in Shop by Category',
-                    style: TextStyle(color: Colors.grey[500]),
+                    style: TextStyle(color: Colors.grey),
                   ),
                 ),
               ],

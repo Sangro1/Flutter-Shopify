@@ -1,18 +1,27 @@
-
 import 'package:example1/uti/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+// final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
+
 }
 
 class _LoginPageState extends State<LoginPage> {
+
   String name = "";
   bool changeButton = false;
-  final _formKey = GlobalKey<FormState>();
+  final  _formKey = GlobalKey<FormState>();
+ // final TextEditingController _emailController  => TextEditingController();
+ //  final TextEditingController _passwordController  => TextEditingController();
+
+
+
 
   moveToHome(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
@@ -24,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changeButton = false;
       });
+
     }
   }
 
@@ -36,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Image.asset(
             "assets/images/new.png",
-            fit: BoxFit.cover,
+            fit: BoxFit.fitHeight,
           ),
           SizedBox(
             height: 20,
@@ -57,7 +67,9 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 TextFormField(
-                  decoration: InputDecoration(
+                  // controller : _emailController,
+
+            decoration: InputDecoration(
                     hintText: "Enter username",
                     labelText: "Username",
                   ),
@@ -74,6 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
                 TextFormField(
+
                   obscureText: true,
                   decoration: InputDecoration(
                     hintText: "Enter password ",
@@ -83,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                     if (value!.isEmpty) {
                       return "Password cannot be empty";
                     } else if (value.length < 6) {
-                      return "Password length should be atleast 6";
+                      return "Password length should be atlest 6";
                     }
                     return null;
                   },
@@ -94,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                 //Animation Widget for login button
 
                 Material(
-                  color: Colors.blueGrey,
+                  color: Colors.green[600],
                   borderRadius: BorderRadius.circular(changeButton ? 50 : 8),
                   child: InkWell(
                     //fat operator
@@ -108,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: changeButton
                           ? Icon(
                               Icons.done,
-                              color: Colors.white,
+                              color: Colors.green,
                             )
                           : Text(
                               'Login',
@@ -119,9 +132,10 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                       decoration: BoxDecoration(
-                        color: Colors.red[900],
+                        color: Colors.red[500],
                         //button logic
-                         shape: changeButton? BoxShape.circle: BoxShape.rectangle,
+                        shape:
+                            changeButton ? BoxShape.circle : BoxShape.rectangle,
                       ),
                     ),
                   ),

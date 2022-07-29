@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+import '../uti/routes.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -15,45 +18,56 @@ class MyDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-                decoration: BoxDecoration(color: Colors.red[900]),
+              decoration: BoxDecoration(color: Colors.red[900]),
               padding: EdgeInsets.zero,
-                child: UserAccountsDrawerHeader(
-                  margin: EdgeInsets.zero,
-                  decoration: BoxDecoration(color: Colors.red[900]),
-                  accountName: Text("Bhupesh Chouhan"),
-                  accountEmail: Text("bhupeshchouhan15@gmail.com"),
-                  currentAccountPicture:CircleAvatar(
-                    backgroundImage: NetworkImage(imageUrl),
-                  ),
-            ),
+              child: UserAccountsDrawerHeader(
+                margin: EdgeInsets.zero,
+                decoration: BoxDecoration(color: Colors.red[900]),
+                accountName: Text("Bhupesh Chouhan"),
+                accountEmail: Text("bhupeshchouhan15@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(imageUrl),
+                ),
+              ),
             ),
             ListTile(
+              onTap: () {
+                Navigator.pop(context);
+              },
               leading: Icon(
                 CupertinoIcons.home,
                 color: Colors.white,
               ),
-              title: Text("Home",
-              textScaleFactor: 1.2,
-              style: TextStyle(color: Colors.white),
-              ),
-            ),
-            ListTile(
-              onTap:(){},
-              leading: Icon(
-                CupertinoIcons.profile_circled,
-                color: Colors.white,
-              ),
-              title: Text("Profile",
+              title: Text(
+                "Home",
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
               ),
             ),
             ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.secondRoute);
+              },
+              leading: Icon(
+                CupertinoIcons.profile_circled,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Profile",
+                textScaleFactor: 1.2,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.shopCate);
+              },
               leading: Icon(
                 CupertinoIcons.mail,
                 color: Colors.white,
               ),
-              title: Text("Email ",
+              title: Text(
+                "Email ",
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
               ),

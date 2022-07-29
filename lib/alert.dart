@@ -1,5 +1,5 @@
 
 class AlertDialog {
- //static String alertPopup = ;
+ static String alertPopup = "Cart is empty" ;
 
 }

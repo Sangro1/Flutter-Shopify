@@ -1,0 +1,65 @@
+{
+        "products" : [
+        {
+        "id" : 1 ,
+        "name" : "iPhone12 pro",
+        "desc" : "Apple iPhone Equipped with impressive features and decent specifications",
+        "color" : "",
+        "price" : 999,
+        "image" : "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSh8Ud6JJeWj4Wg4mJ14ytAOmmtmk08bFvIaxpp-d36308BmsMRBHsHibheTN70xJmsX7RjX648qT8yST3B7TW6nX9ZmK-K6qMya5NhwsM&usqp=CAc"
+        },
+        {
+                "id" : 2 ,
+                "name" : "Pixel 4a",
+                "desc" : "Google pixel phone 4th generation",
+                "color" : "",
+                "price" : 699,
+                "image" : "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTdsJ4ZS1WCMkPped7g6nYPDjNsXcegzzafQ6pPyJJjPw2H4pRVuZ--VW6S27quSC2gG-oorkYErKQ&usqp=CAc"
+        },
+
+        {
+                "id" : 3,
+                "name" : "Playstation 5",
+                "desc" : "Sony Playstation 5th genration", 
+                "color" : "",
+                "price" : 500,
+                "image" : "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSqXfMd0H3Tg0S2W7HDZN_zrvCXvxuL1qUMrRzuzTyqOIt5s8yLRTmqDPdqvDnTb1K16639fUS-WvU&usqp=CAc"
+
+        },
+        {
+                "id" : 4 ,
+                "name" : "Pixel 6A",
+                "desc" : "Google pixel phone 6th genration with 5G network support",
+                "color" : "",
+                "price" : 449,
+                "image" : "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR83n7gTUUcvTHo-icQN48EEqsSEPRNzzOqSmERXMA0l6CheJTvIeL9lq9X7bcuva9unyBgk4ifavU&usqp=CAc"
+
+        },
+                {
+                        "id" : 5,
+                        "name" : "Galaxy S22 Ultra",
+                        "desc" : "built-in S Pen, Nightography camera",
+                        "color" : "",
+                        "price" : 1199,
+                        "image" : "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTZhKkmpWprRmqL4SSSJYCzYy3hHYxrziTWpBdB6owhtts1Wz3vMVXlKhfyF2dzp_MYpQRfg49hBDaWU3-nZnn2VSI8PIks_Nkhkryl8XekwBwJi8cDf3QNpg&usqp=CAE"
+                },
+                {
+                        "id" : 6,
+                        "name" : "Galaxy Z Fold 3",
+                        "desc" : "Foldable phone",
+                        "color" : "",
+                        "price" : 1799,
+                        "image" : "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS5LESSHUZy2Ou82Q_5ny0ywsPzzTcvOfQm3RdbBtoFRZAyA8hNkZuKd8TXzYLeQlU0v7o84pPic1TMTK9Ldlafdy-lON-B7ucw0hBjH1q5TNW-m7H9ekH4&usqp=CAE"
+                },
+
+                {
+                        "id" : 7,
+                        "name" : "Samsung Galaxy Watch 4",
+                        "desc" : "Your fitness tracker",
+                        "color" : "",
+                        "price" : 224,
+                        "image" : "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR-7raQJDAotWeRUwfAQbCKHmOWVN1th642FLMAUDwWzDP8u7DH4iOqdFADRNYkWK-6z1eercT1fw6r&usqp=CAc"
+                }
+
+        ]
+    }

@@ -11,10 +11,9 @@ class ExploreGrid extends StatelessWidget {
         SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2 ),
     itemBuilder: (context ,index) {
       return Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Container(
-
-          color: Colors.grey,
+          color: Colors.red[900],
         ),
       );
     }

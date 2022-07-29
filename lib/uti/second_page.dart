@@ -15,13 +15,13 @@ class _SecondPageState extends State<SecondPage> {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('Shopping Cart'),
+            title: Text('Shopping Catelog'),
             backgroundColor: Colors.red[900],
             bottom: TabBar(
               tabs: <Widget>[
-                Tab(text: 'Bestsellers'),
-                Tab(text: 'Hot New Releases'),
-                Tab(text: 'Movers and Shakers'),
+                Tab(text: 'Hot'),
+                Tab(text: 'New'),
+                Tab(text: 'Sale'),
               ],
             ),
           ),
