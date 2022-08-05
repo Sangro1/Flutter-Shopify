@@ -8,6 +8,7 @@ import '../widgets/Homepages/home_details_p.dart';
 import 'catalog.dart';
 
 class CatalogList extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -19,14 +20,17 @@ class CatalogList extends StatelessWidget {
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => HomeDetailsPage(
-                          catalog: catalog,
-                        ))),
+                  builder: (context) => HomeDetailsPage(
+                    catalog: catalog,
+                  ),
+                )),
             child: CatalogItem(catalog: catalog));
       },
     );
   }
 }
+
+//list of items
 
 class CatalogItem extends StatelessWidget {
   final Item catalog;
@@ -38,7 +42,8 @@ class CatalogItem extends StatelessWidget {
     return VxBox(
       child: Row(
         children: [
-          //Big image
+
+          //Big image animation
           Hero(
             tag: Key(catalog.id.toString()),
             child: CatalogImage(image: catalog.image),
@@ -48,27 +53,52 @@ class CatalogItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              catalog.name.text.bold.make(),
+              catalog.name.text.bold.color(MyTheme.darkBluishColor).bold.make(),
               catalog.desc.text.textStyle(context.captionStyle).make(),
+              10.heightBox,
               ButtonBar(
-                alignment: MainAxisAlignment.spaceAround,
-                buttonPadding: EdgeInsets.symmetric(),
+                alignment: MainAxisAlignment.spaceBetween,
+                buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${catalog.price}".text.bold.xl.make(),
-                  ElevatedButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          MyTheme.darkBluishColor,
-                        ),
-                      ),
-                      child: "Buy".text.make()),
+                  _AddToCart()
                 ],
               ),
             ],
-          ))
+              ))
         ],
       ),
-    ).purple300.rounded.square(150).make().py16();
+    ).white.rounded.square(150).make().py16();
+  }
+
+}
+
+class _AddToCart extends StatefulWidget {
+  const _AddToCart({Key? key}) : super(key: key);
+  @override
+  State<_AddToCart> createState() => _AddToCartState();
+}
+
+class _AddToCartState extends State<_AddToCart> {
+  bool isAdded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        isAdded = isAdded.toggle();
+        // final _catalog = CatalogModel();
+        // final _cart = CartModel();
+        // _cart.add(_catalog);
+        setState(() {});
+      },
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor),
+        shape: MaterialStateProperty.all(const StadiumBorder()),
+      ),
+      //if the following condition is true then show done icon ,else show " add to cart"
+      child: isAdded ? const Icon(Icons.done) : "Add to cart".text.make(),
+    );
   }
 }
+

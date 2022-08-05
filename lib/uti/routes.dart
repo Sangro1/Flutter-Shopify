@@ -1,10 +1,10 @@
 
 class MyRoutes{
-  static String loginRoute  = "/login";
-  static String homeRoute   = "MyHomePage(title: appTitle,),";
-  static String secondRoute = "/SecondPage";
+  static String loginRoute = "/Login";
+  static String registerRoute = "/RegisterPage";
+  static String homeRoute   = "/MyHomePage";
+  static String newRoute  = "/NewHomePage";
   static String shopCate    = "/ShopCate";
-  static String homedetailsRoute = "/HomeDetailsRoute";
-// "/ShopCate"  : (context) => ShopCate(),
+  static String cartRoute = "/MyCart";
 
 }

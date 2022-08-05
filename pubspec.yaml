@@ -40,6 +40,10 @@ dependencies:
   firebase_core: ^1.20.0
   firebase_auth: ^3.5.0
   velocity_x: ^3.5.1
+  google_sign_in: ^5.4.0
+  font_awesome_flutter: ^10.1.0
+  avoid_keyboard: ^0.3.0
+#  google_maps_flutter: ^2.1.10
 
 dev_dependencies:
   flutter_test:
@@ -65,7 +69,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/images/fb.png
+    - assets/images/googlebutton.png
     - assets/images/new.png
+    - assets/images/hello.png
     - assets/files/first.json
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

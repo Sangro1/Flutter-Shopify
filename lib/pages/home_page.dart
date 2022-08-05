@@ -1,5 +1,7 @@
 import 'package:example1/uti/MyTheme.dart';
 import 'package:example1/models/catalog.dart';
+import 'package:example1/uti/routes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -16,12 +18,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final int days = 30;
-  final String name = "Cubexo";
 
   //final String url = "";
   @override
-
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -29,12 +28,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
-
+    await Future.delayed(const Duration(seconds: 2));
     final firstJson = await rootBundle.loadString("assets/files/first.json");
     final decodedData = jsonDecode(firstJson);
     //print(decodedData);
     var productsData = decodedData["products"];
+    //catalog list
     CatalogModel.items = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
         .toList();
@@ -45,30 +44,29 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     //final dummyList = List.generate(50, (index) => CatalogModel.items[0]);
     return Scaffold(
-      //appBar: AppBar( ),
+       // appBar: AppBar( ),
       backgroundColor: MyTheme.creamColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        backgroundColor: MyTheme.darkBluishColor,
+        child: const Icon(CupertinoIcons.cart),
+      ),
       body: SafeArea(
         child: Container(
-          padding: Vx.m16,
+          padding: Vx.m12,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ShoopingHeader(),
+              const ShoopingHeader(),
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                CatalogList().expand()
+                CatalogList().py12().expand()
               else
-                CircularProgressIndicator().centered().py16(),
+                const CircularProgressIndicator().centered().py16(),
             ],
           ),
         ),
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
-
-
-
-
-
-

@@ -1,3 +1,4 @@
+import 'package:example1/uti/MyTheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -11,22 +12,25 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final imageUrl =
         "https://avatars.githubusercontent.com/u/87020382?s=400&u=fed6383984f3e8b50dd6c30eddc6129525196e6a&v=4";
+
     return Drawer(
       child: Container(
-        color: Colors.red[900],
+        color: MyTheme.darkcreamColor,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.red[900]),
+              // decoration: BoxDecoration(color: Colors.red[900]),
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                decoration: BoxDecoration(color: Colors.red[900]),
-                accountName: Text("Bhupesh Chouhan"),
-                accountEmail: Text("bhupeshchouhan15@gmail.com"),
+                  decoration: BoxDecoration(color: MyTheme.darkcreamColor),
+                accountName: const Text("Bhupesh Chouhan"),
+                accountEmail: const Text("bhupeshchouhan15@gmail.com"),
                 currentAccountPicture: CircleAvatar(
+                  //here we add camera instead of hard code
                   backgroundImage: NetworkImage(imageUrl),
+
                 ),
               ),
             ),
@@ -34,11 +38,11 @@ class MyDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              leading: Icon(
+              leading: const Icon(
                 CupertinoIcons.home,
                 color: Colors.white,
               ),
-              title: Text(
+              title: const Text(
                 "Home",
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
@@ -46,13 +50,13 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, MyRoutes.secondRoute);
+                Navigator.pushNamed(context, MyRoutes.cartRoute);
               },
-              leading: Icon(
+              leading: const Icon(
                 CupertinoIcons.profile_circled,
                 color: Colors.white,
               ),
-              title: Text(
+              title: const Text(
                 "Profile",
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
@@ -60,13 +64,13 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, MyRoutes.shopCate);
+                Navigator.pushNamed(context, MyRoutes.cartRoute);
               },
-              leading: Icon(
+              leading: const Icon(
                 CupertinoIcons.mail,
                 color: Colors.white,
               ),
-              title: Text(
+              title: const Text(
                 "Email ",
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
