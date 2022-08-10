@@ -1,10 +1,12 @@
 import 'package:example1/models/catalog.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class ItemWidget extends StatelessWidget {
   const ItemWidget({Key? key, required this.item})
       : assert(item != null),
         super(key: key);
+
   //assert only use in debugging
 
   final Item item;

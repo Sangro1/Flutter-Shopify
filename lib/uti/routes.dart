@@ -6,5 +6,6 @@ class MyRoutes{
   static String newRoute  = "/NewHomePage";
   static String shopCate    = "/ShopCate";
   static String cartRoute = "/MyCart";
+  static String mapRoute = "/MyMap";
 
 }

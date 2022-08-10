@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:example1/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -11,7 +11,7 @@ class MyCart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         backgroundColor: MyTheme.creamColor,
+        backgroundColor: MyTheme.creamColor,
         title: "Cart".text.make(),
       ),
       body: Column(
@@ -44,7 +44,7 @@ class _CartTotal extends StatelessWidget {
                 SnackBar(content: "Buying not supported yet".text.make()),
               );
             },
-            child: "Add to cart".text.make(),
+            child: "Buy".text.make(),
           ).w32(context),
         ],
       ),
@@ -63,19 +63,19 @@ class _CartListState extends State<_CartList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 10,
-      itemBuilder: (context, index) => ListTile(
-        leading: Icon(Icons.done),
-        trailing: IconButton(
-          icon: Icon(Icons.remove_circle_outline),
-          onPressed: () {
+    return _cart.items.isEmpty
+        ? "Nothing to show".text.xl3.makeCentered()
+        : ListView.builder(
+            itemCount: _cart.items.length,
+            itemBuilder: (context, index) => ListTile(
+              leading: Icon(Icons.done),
+              trailing: IconButton(
+                icon: Icon(Icons.remove_circle_outline),
+                onPressed: () {},
+              ),
 
-          },
-        ),
-        title: "Item 1".text.make(),
-        //_cart.items[index].name
-      ),
-    );
+              title: _cart.items[index].name.text.make(),
+            ),
+          );
   }
 }

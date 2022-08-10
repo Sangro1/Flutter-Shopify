@@ -1,7 +1,12 @@
+
 class CatalogModel {
-  static List<Item> items = [
-    //catalog items list
-  ];
+  //singleton
+  static final catModel = CatalogModel._internal();
+  CatalogModel._internal();
+  //cartmodel return
+  factory CatalogModel() => catModel;
+
+  static List<Item> items=[];
 
   //get item by id
   Item getById(int id) =>

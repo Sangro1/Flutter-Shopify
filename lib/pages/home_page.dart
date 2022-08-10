@@ -9,6 +9,7 @@ import '../models/catalog_list.dart';
 import '../widgets/Homepages/home_widgets.dart';
 import '../widgets/drawer.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:http/http.dart'as http;
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -18,8 +19,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   //final String url = "";
+
   @override
   void initState() {
     // TODO: implement initState
@@ -28,12 +29,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   loadData() async {
+
     await Future.delayed(const Duration(seconds: 2));
     final firstJson = await rootBundle.loadString("assets/files/first.json");
     final decodedData = jsonDecode(firstJson);
-    //print(decodedData);
+    // print(decodedData);
+
     var productsData = decodedData["products"];
-    //catalog list
+    // catalog list
     CatalogModel.items = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
         .toList();

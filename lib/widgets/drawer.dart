@@ -24,13 +24,12 @@ class MyDrawer extends StatelessWidget {
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                  decoration: BoxDecoration(color: MyTheme.darkcreamColor),
+                decoration: BoxDecoration(color: MyTheme.darkcreamColor),
                 accountName: const Text("Bhupesh Chouhan"),
                 accountEmail: const Text("bhupeshchouhan15@gmail.com"),
                 currentAccountPicture: CircleAvatar(
                   //here we add camera instead of hard code
                   backgroundImage: NetworkImage(imageUrl),
-
                 ),
               ),
             ),
@@ -64,14 +63,14 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, MyRoutes.cartRoute);
+                Navigator.pushNamed(context, MyRoutes.mapRoute);
               },
               leading: const Icon(
-                CupertinoIcons.mail,
+                CupertinoIcons.location_solid,
                 color: Colors.white,
               ),
               title: const Text(
-                "Email ",
+                "location ",
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
               ),
