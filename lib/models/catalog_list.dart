@@ -31,7 +31,6 @@ class CatalogList extends StatelessWidget {
 }
 
 //list of items
-
 class CatalogItem extends StatelessWidget {
   final Item catalog;
 
@@ -40,36 +39,8 @@ class CatalogItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VxBox(
-<<<<<<< HEAD
-      child: Row(children: [
-        //Big image animation
-        Hero(
-          tag: Key(catalog.id.toString()),
-          child: CatalogImage(image: catalog.image),
-        ),
-        Expanded(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            catalog.name.text.bold.color(MyTheme.darkBluishColor).bold.make(),
-            catalog.desc.text.textStyle(context.captionStyle).make(),
-            10.heightBox,
-            ButtonBar(
-              alignment: MainAxisAlignment.spaceBetween,
-              buttonPadding: EdgeInsets.zero,
-              children: [
-                "\$${catalog.price}".text.bold.xl.make(),
-                _AddToCart(catalog: catalog),
-              ],
-            ),
-          ],
-        ))
-      ]),
-=======
       child: Row(
         children: [
-
           //Big image animation
           Hero(
             tag: Key(catalog.id.toString()),
@@ -95,7 +66,6 @@ class CatalogItem extends StatelessWidget {
               ))
         ],
       ),
->>>>>>> 1a16da0 (11day)
     ).white.rounded.square(150).make().py16();
   }
 }
@@ -114,21 +84,16 @@ class _AddToCartState extends State<_AddToCart> {
     bool isInCart = _cart.items.contains(widget.catalog) != false;
     return ElevatedButton(
       onPressed: () {
-<<<<<<< HEAD
-        isInCart = isInCart.toggle();
-        final _catalog = CatalogModel();
-
-        _cart.catalog = _catalog;
-        _cart.add(widget.catalog);
-=======
-        isAdded = isAdded.toggle();
+        // isInCart = isInCart.toggle();
+        // final _catalog = CatalogModel();
+        // _cart.catalog = _catalog;
+        // _cart.add(widget.catalog);
+        // isAdded = isAdded.toggle();
 
         final _catalog = CatalogModel();
         final _cart = CartModel();
         _cart.catalog = _catalog;
         _cart.add(widget.catalog);
-
->>>>>>> 1a16da0 (11day)
         setState(() {});
       },
       style: ButtonStyle(
