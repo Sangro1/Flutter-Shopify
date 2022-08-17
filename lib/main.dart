@@ -1,6 +1,5 @@
-// ignore_for_file: unused_element
-
 import 'package:example1/auth_service.dart';
+import 'package:example1/pages/camera.dart';
 import 'package:example1/pages/cart_p.dart';
 import 'package:example1/pages/map_page.dart';
 import 'package:example1/pages/register_page.dart';
@@ -12,8 +11,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'new_home.dart';
 import 'pages/login_page.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:location/location.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -25,27 +22,27 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  static const appTitle = 'Shopping.in';
+  static const appTitle = 'Shopping.dart';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
-      themeMode: ThemeMode.light,
-      theme: MyTheme.lightTheme(context),
-      darkTheme: MyTheme.darkTheme(context),
-      routes: {
-        "/": (context) => AuthService().handleAuthState(),
+        debugShowCheckedModeBanner: false,
+        title: appTitle,
+        themeMode: ThemeMode.light,
+        theme: MyTheme.lightTheme(context),
+        darkTheme: MyTheme.darkTheme(context),
+        routes: {
+          "/": (context) => AuthService().handleAuthState(),
 
-        //calling routing class here
-        MyRoutes.registerRoute: (context) => const RegisterPage(),
-        MyRoutes.loginRoute: (context) => const LoginPage(),
-        MyRoutes.homeRoute: (context) => const MyHomePage(),
-        MyRoutes.newRoute: (context) => const NewHomePage(),
-        MyRoutes.cartRoute: (context) => const MyCart(),
-        MyRoutes.mapRoute: (context) => const MyMap(),
-      }
-    );
+          //calling routing class here
+          MyRoutes.registerRoute: (context) => const RegisterPage(),
+          MyRoutes.loginRoute: (context) => const LoginPage(),
+          MyRoutes.homeRoute: (context) => const MyHomePage(),
+          MyRoutes.newRoute: (context) => const NewHomePage(),
+          MyRoutes.cartRoute: (context) => const MyCart(),
+          MyRoutes.mapRoute: (context) => const MyMap(),
+          MyRoutes.cameraRoute: (context) => const MyCamera(),
+        });
   }
 }

@@ -68,10 +68,12 @@ class _CartListState extends State<_CartList> {
         : ListView.builder(
             itemCount: _cart.items.length,
             itemBuilder: (context, index) => ListTile(
-              leading: Icon(Icons.done),
+              leading: const Icon(Icons.done),
               trailing: IconButton(
                 icon: Icon(Icons.remove_circle_outline),
-                onPressed: () {},
+                onPressed: () {
+
+                },
               ),
 
               title: _cart.items[index].name.text.make(),

@@ -44,9 +44,14 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   avoid_keyboard: ^0.3.0
   flutter_facebook_auth: ^4.4.0+1
+# google_map
   flutter_polyline_points: ^1.0.0
   google_maps_flutter: ^2.1.10
   location: ^4.4.0
+  intl: ^0.17.0
+
+  path_provider: ^2.0.11
+  camera: ^0.10.0+1
 #  google_maps_flutter: ^2.1.10
 
 dev_dependencies:

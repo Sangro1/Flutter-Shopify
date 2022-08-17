@@ -1,4 +1,3 @@
-
 import 'package:example1/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,13 +15,13 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    // final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
 
     return Material(
-      child:Column(
-      children: [
-        Container(
-          child: Material(
+      child: Column(
+        children: [
+          Container(
+            child: Material(
               child: Column(
                 children: [
                   // Image.asset(
@@ -39,18 +38,18 @@ class _LoginPageState extends State<LoginPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
 
                   Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16.0, horizontal: 32.0),
                     child: Column(
                       children: [
                         TextFormField(
-                          onChanged:(value){
-                            email : value;
+                          onChanged: (value) {
+                            email = value;
                           },
                           decoration: InputDecoration(
                             hintText: "Enter Email",
@@ -67,18 +66,20 @@ class _LoginPageState extends State<LoginPage> {
                           height: 10,
                         ),
                         TextFormField(
-                            onChanged: (value){
-                              pass = value;
-                            },
+                          onChanged: (value) {
+                            pass = value;
+                          },
                           obscureText: true,
                           decoration: InputDecoration(
                             hintText: "Enter password ",
                             labelText: "Password",
                           ),
                         ),
-                        SizedBox(height: 5.0,),
+                        SizedBox(
+                          height: 5.0,
+                        ),
                         Container(
-                          alignment: Alignment(1,0),
+                          alignment: Alignment(1, 0),
                           padding: EdgeInsets.only(top: 15, left: 20),
                           child: InkWell(
                             child: Text(
@@ -87,8 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Montserrat',
-                                  decoration: TextDecoration.underline
-                              ),
+                                  decoration: TextDecoration.underline),
                             ),
                           ),
                         ),
@@ -101,51 +101,54 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.black,
                             elevation: 7,
                             child: GestureDetector(
-                                onTap: () async {
-                                  try {
-                                    UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-                                        email: email,
-                                        password: pass,
-                                    );
-                                    Navigator.pushNamed(context, MyRoutes.homeRoute );
-                                  } on FirebaseAuthException catch (e) {
-                                    if (e.code == 'user-not-found') {
-                                      print('No user found for that email.');
-                                    } else if (e.code == 'wrong-password') {
-                                      print('Wrong password provided for that user.');
-                                    }
+                              onTap: () async {
+                                try {
+                                  UserCredential userCredential =
+                                      await FirebaseAuth.instance
+                                          .signInWithEmailAndPassword(
+                                    email: email,
+                                    password: pass,
+                                  );
+                                  Navigator.pushNamed(
+                                      context, MyRoutes.homeRoute);
+                                } on FirebaseAuthException catch (e) {
+                                  if (e.code == 'user-not-found') {
+                                    print('No user found for that email.');
+                                  } else if (e.code == 'wrong-password') {
+                                    print(
+                                        'Wrong password provided for that user.');
                                   }
-
-                                },
-                                child: Center(
-                                    child: Text(
-                                        'SIGNIN',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: 'Montserrat'
-                                        )
-                                    )
-                                ),
+                                }
+                              },
+                              child: Center(
+                                  child: Text('SIGNIN',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Montserrat'))),
                             ),
                           ),
                         ),
-                        SizedBox(height: 15,),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 50,
-                        child: Material(
-                          child: GestureDetector(
-                            onTap: () {
-                              AuthService().signInWithGoogle();
-                              Navigator.pushNamed(context, MyRoutes.homeRoute );
-                            },
-                            child: Image(
-                              image: AssetImage('assets/images/googlebutton.png'),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Container(
+                          alignment: Alignment.center,
+                          height: 50,
+                          child: Material(
+                            child: GestureDetector(
+                              onTap: () {
+                                AuthService().signInWithGoogle();
+                                Navigator.pushNamed(
+                                    context, MyRoutes.homeRoute);
+                              },
+                              child: Image(
+                                image: AssetImage(
+                                    'assets/images/googlebutton.png'),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                      ),
                         // Container(
                         //   alignment: Alignment.center,
                         //   height: 50,
@@ -161,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                         //     ),
                         //   ),
                         // ),
-                        SizedBox(height :5),
+                        SizedBox(height: 5),
                         Container(
                           alignment: Alignment.center,
                           padding: EdgeInsets.only(top: 15, left: 20),
@@ -172,25 +175,23 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Montserrat',
-                                  decoration: TextDecoration.underline
-                              ),
+                                  decoration: TextDecoration.underline),
                             ),
-                            onTap: (){
-                              Navigator.pushNamed(context,MyRoutes.registerRoute);
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, MyRoutes.registerRoute);
                             },
                           ),
                         ),
-
-
                       ],
                     ),
                   ),
                 ],
               ),
+            ),
           ),
-        ),
-      ],
-    ),
+        ],
+      ),
     );
   }
 }

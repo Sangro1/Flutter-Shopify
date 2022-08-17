@@ -1,6 +1,4 @@
-import 'dart:ffi';
 
-import 'package:example1/auth_service.dart';
 import 'package:example1/uti/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,7 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
     // final Size size = MediaQuery.of(context).size;
 
     return Material(
-      child:Column(
+      child: Column(
         children: [
           Container(
             child: Material(
@@ -43,12 +41,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
 
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16.0, horizontal: 32.0),
                     child: Column(
                       children: [
                         TextFormField(
-                          onChanged:(value){
+                          onChanged: (value) {
                             email = value;
                           },
                           decoration: InputDecoration(
@@ -60,7 +58,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           height: 10,
                         ),
                         TextFormField(
-                          onChanged: (value){
+                          onChanged: (value) {
                             pass = value;
                           },
                           obscureText: true,
@@ -69,7 +67,6 @@ class _RegisterPageState extends State<RegisterPage> {
                             labelText: "Password",
                           ),
                         ),
-
                         SizedBox(height: 20),
                         Container(
                           height: 40,
@@ -81,36 +78,35 @@ class _RegisterPageState extends State<RegisterPage> {
                             child: GestureDetector(
                               onTap: () async {
                                 try {
-                                  UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                                      email: email,
-                                      password: pass,
+                                  UserCredential userCredential =
+                                      await FirebaseAuth.instance
+                                          .createUserWithEmailAndPassword(
+                                    email: email,
+                                    password: pass,
                                   );
-                                  Navigator.pushNamed(context, MyRoutes.homeRoute );
+                                  Navigator.pushNamed(
+                                      context, MyRoutes.homeRoute);
                                 } on FirebaseAuthException catch (e) {
                                   if (e.code == 'weak-password') {
                                     print('The password provided is too weak.');
                                   } else if (e.code == 'email-already-in-use') {
-                                    print('The account already exists for that email.');
+                                    print(
+                                        'The account already exists for that email.');
                                   }
                                 } catch (e) {
-                                  print(e);
+                                       print(e);
                                 }
-
                               },
-                              child: Center(
-                                  child: Text(
-                                      'SIGNUP',
+                              child: const Center(
+                                  child: Text('SIGNUP',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
-                                          fontFamily: 'Montserrat'
-                                      )
-                                  )
-                              ),
+                                          fontFamily: 'Montserrat'))),
                             ),
                           ),
                         ),
-                        SizedBox(height :15),
+                        SizedBox(height: 15),
                         Container(
                           alignment: Alignment.topCenter,
                           padding: EdgeInsets.only(top: 15, left: 20),
@@ -121,17 +117,15 @@ class _RegisterPageState extends State<RegisterPage> {
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Montserrat',
-                                  decoration: TextDecoration.underline
-                              ),
+                                  decoration: TextDecoration.underline),
                             ),
-                            onTap: (){
-                              Navigator.pushNamed(context,MyRoutes.loginRoute);
+
+                            //Page navigation
+                            onTap: () {
+                              Navigator.pushNamed(context, MyRoutes.loginRoute);
                             },
                           ),
                         ),
-
-
-
                       ],
                     ),
                   ),

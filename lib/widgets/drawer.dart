@@ -33,6 +33,7 @@ class MyDrawer extends StatelessWidget {
                 ),
               ),
             ),
+            //1.Home Button
             ListTile(
               onTap: () {
                 Navigator.pop(context);
@@ -47,6 +48,7 @@ class MyDrawer extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
+            //2.Profile
             ListTile(
               onTap: () {
                 Navigator.pushNamed(context, MyRoutes.cartRoute);
@@ -61,6 +63,7 @@ class MyDrawer extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
+            //3.Google Map Button
             ListTile(
               onTap: () {
                 Navigator.pushNamed(context, MyRoutes.mapRoute);
@@ -74,7 +77,22 @@ class MyDrawer extends StatelessWidget {
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
               ),
-            )
+            ),
+            //4.Camera Button
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.cameraRoute);
+              },
+              leading: const Icon(
+                CupertinoIcons.camera,
+                color: Colors.white,
+              ),
+              title: const Text(
+                "Camera",
+                textScaleFactor: 1.2,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           ],
         ),
       ),
