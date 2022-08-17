@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
                 CatalogList().py12().expand()
               else
-                const CircularProgressIndicator().centered().py16(),
+                CircularProgressIndicator().centered().py16(),
             ],
           ),
         ),

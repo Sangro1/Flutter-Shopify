@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 class CatalogModel {
   //singleton
@@ -7,6 +8,17 @@ class CatalogModel {
   factory CatalogModel() => catModel;
 
   static List<Item> items=[];
+=======
+import 'package:example1/models/cart.dart';
+import 'package:flutter/material.dart';
+
+class CatalogModel {
+  static final catModel = CatalogModel._internal();
+  CatalogModel._internal();
+  factory CatalogModel() =>catModel;
+
+  static List<Item> items = [];
+>>>>>>> 1a16da0 (11day)
 
   //get item by id
   Item getById(int id) =>

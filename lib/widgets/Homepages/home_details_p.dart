@@ -25,8 +25,7 @@ class HomeDetailsPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.bold.xl4.red400.make(),
-            //
-            const _AddToCart(),
+            _AddToCart(catalog: catalog),
           ],
         ).p32(),
       ),
@@ -79,7 +78,8 @@ class HomeDetailsPage extends StatelessWidget {
 }
 
 class _AddToCart extends StatefulWidget {
-  const _AddToCart({Key? key}) : super(key: key);
+  final Item catalog;
+  const _AddToCart({Key? key, required this.catalog}) : super(key: key);
   @override
   State<_AddToCart> createState() => _AddToCartState();
 }
@@ -92,9 +92,11 @@ class _AddToCartState extends State<_AddToCart> {
     return ElevatedButton(
       onPressed: () {
         isAdded = isAdded.toggle();
-        // final _catalog = CatalogModel();
-        // final _cart = CartModel();
-        // _cart.add(_catalog);
+        final _catalog = CatalogModel();
+        final _cart = CartModel();
+        _cart.catalog = _catalog;
+        _cart.add(widget.catalog);
+
         setState(() {});
       },
       style: ButtonStyle(
