@@ -1,7 +1,7 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../../uti/MyTheme.dart';
+
 //Home Header
 class ShoopingHeader extends StatelessWidget {
   const ShoopingHeader({Key? key}) : super(key: key);

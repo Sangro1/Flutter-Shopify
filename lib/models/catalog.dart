@@ -1,14 +1,13 @@
-
 class CatalogModel {
   static final catModel = CatalogModel._internal();
   CatalogModel._internal();
-  factory CatalogModel() =>catModel;
+  factory CatalogModel() => catModel;
 
   static List<Item> items = [];
 
   //get item by id
   Item getById(int id) =>
-      items.firstWhere((element) => element.id == id, orElse: null);
+      items.firstWhere((element) => element.id == id,);
 
 //get item by position
   Item getByPosition(int pos) => items[pos];
@@ -41,7 +40,6 @@ class Item {
       image: map["image"],
     );
   }
-  //earlier MAP s ID m data le rahe the, Now ID se MAP m data lenge
   toMap() => {
         "id": id,
         "name": name,

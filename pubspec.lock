@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  alert_dialog:
+    dependency: "direct main"
+    description:
+      name: alert_dialog
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   async:
     dependency: transitive
     description:
@@ -56,7 +63,7 @@ packages:
       name: camera_avfoundation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.8+3"
+    version: "0.9.8+4"
   camera_platform_interface:
     dependency: transitive
     description:
@@ -120,6 +127,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  expandable_text:
+    dependency: "direct main"
+    description:
+      name: expandable_text
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.3.0"
   fake_async:
     dependency: transitive
     description:
@@ -140,35 +154,35 @@ packages:
       name: file
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.2"
+    version: "6.1.4"
   firebase_auth:
     dependency: "direct main"
     description:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.6.3"
+    version: "3.6.4"
   firebase_auth_platform_interface:
     dependency: transitive
     description:
       name: firebase_auth_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.5.3"
+    version: "6.5.4"
   firebase_auth_web:
     dependency: transitive
     description:
       name: firebase_auth_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.2.3"
+    version: "4.2.4"
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.20.1"
+    version: "1.21.0"
   firebase_core_platform_interface:
     dependency: transitive
     description:
@@ -188,6 +202,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_cart:
+    dependency: "direct main"
+    description:
+      name: flutter_cart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.7"
   flutter_facebook_auth:
     dependency: "direct main"
     description:
@@ -260,7 +281,21 @@ packages:
       name: google_maps_flutter
       url: "https://pub.dartlang.org"
     source: hosted
+    version: "2.1.12"
+  google_maps_flutter_android:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_android
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "2.1.10"
+  google_maps_flutter_ios:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_ios
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.11"
   google_maps_flutter_platform_interface:
     dependency: transitive
     description:

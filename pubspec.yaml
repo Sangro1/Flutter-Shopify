@@ -52,6 +52,9 @@ dependencies:
 
   path_provider: ^2.0.11
   camera: ^0.10.0+1
+  expandable_text: ^2.3.0
+  flutter_cart: ^0.0.7
+  alert_dialog: ^1.0.1
 #  google_maps_flutter: ^2.1.10
 
 dev_dependencies:

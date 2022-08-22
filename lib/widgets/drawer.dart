@@ -1,4 +1,6 @@
+import 'package:example1/auth_service.dart';
 import 'package:example1/uti/MyTheme.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -33,6 +35,7 @@ class MyDrawer extends StatelessWidget {
                 ),
               ),
             ),
+            //drawer lists of items
             //1.Home Button
             ListTile(
               onTap: () {
@@ -51,7 +54,7 @@ class MyDrawer extends StatelessWidget {
             //2.Profile
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, MyRoutes.cartRoute);
+                Navigator.pushNamed(context, MyRoutes.registerRoute);
               },
               leading: const Icon(
                 CupertinoIcons.profile_circled,

@@ -1,9 +1,9 @@
+// ignore_for_file: unused_local_variable
 
 import 'package:example1/uti/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:avoid_keyboard/avoid_keyboard.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -17,7 +17,6 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     // final Size size = MediaQuery.of(context).size;
-
     return Material(
       child: Column(
         children: [
@@ -94,15 +93,16 @@ class _RegisterPageState extends State<RegisterPage> {
                                         'The account already exists for that email.');
                                   }
                                 } catch (e) {
-                                       print(e);
+                                  print(e);
                                 }
                               },
                               child: const Center(
-                                  child: Text('SIGNUP',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'Montserrat'))),
+                                child: Text('SIGNUP',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'Montserrat')),
+                              ),
                             ),
                           ),
                         ),
@@ -111,7 +111,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           alignment: Alignment.topCenter,
                           padding: EdgeInsets.only(top: 15, left: 20),
                           child: InkWell(
-                            child: Text(
+                            child: const Text(
                               'Login',
                               style: TextStyle(
                                   color: Colors.black,
@@ -119,9 +119,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                   fontFamily: 'Montserrat',
                                   decoration: TextDecoration.underline),
                             ),
-
                             //Page navigation
                             onTap: () {
+                              CircularProgressIndicator();
                               Navigator.pushNamed(context, MyRoutes.loginRoute);
                             },
                           ),

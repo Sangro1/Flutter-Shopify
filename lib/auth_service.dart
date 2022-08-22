@@ -12,15 +12,14 @@ class AuthService {
   //3. signOut()
 
   //determine if user is authenticated
-
   handleAuthState() {
     return StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (BuildContext context, snapshot) {
           if (snapshot.hasData) {
-            return const NewHomePage();
+            return NewHomePage();
           } else {
-            return const LoginPage();
+            return LoginPage();
           }
         });
   }
@@ -39,7 +38,6 @@ class AuthService {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-
     //Once sign in, return the UserCredential
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }

@@ -29,7 +29,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   loadData() async {
-
     await Future.delayed(const Duration(seconds: 2));
     final firstJson = await rootBundle.loadString("assets/files/first.json");
     final decodedData = jsonDecode(firstJson);
@@ -50,7 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
        // appBar: AppBar( ),
       backgroundColor: MyTheme.creamColor,
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        onPressed: () =>
+            Navigator.pushNamed(
+              context, MyRoutes.cartRoute),
         backgroundColor: MyTheme.darkBluishColor,
         child: const Icon(CupertinoIcons.cart),
       ),
@@ -65,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 CatalogList().py12().expand()
               else
                 CircularProgressIndicator().centered().py16(),
+              //loader
             ],
           ),
         ),

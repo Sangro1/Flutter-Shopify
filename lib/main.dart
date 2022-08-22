@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
         darkTheme: MyTheme.darkTheme(context),
         routes: {
           "/": (context) => AuthService().handleAuthState(),
+          // "/": (context) => const NewHomePage(),
 
           //calling routing class here
           MyRoutes.registerRoute: (context) => const RegisterPage(),
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
           MyRoutes.newRoute: (context) => const NewHomePage(),
           MyRoutes.cartRoute: (context) => const MyCart(),
           MyRoutes.mapRoute: (context) => const MyMap(),
-          MyRoutes.cameraRoute: (context) => const MyCamera(),
+          // MyRoutes.cameraRoute: (context) => const MyCamera(),
         });
   }
 }

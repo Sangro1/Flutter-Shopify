@@ -1,9 +1,10 @@
 import 'package:example1/models/cart.dart';
+import 'package:example1/models/catalog.dart';
 import 'package:example1/uti/MyTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-//1. Cart Page
+//Buying Page
 class MyCart extends StatelessWidget {
   const MyCart({Key? key}) : super(key: key);
 
@@ -16,15 +17,14 @@ class MyCart extends StatelessWidget {
       ),
       body: Column(
         children: [
-          _CartList().p32().expand(),
-          Divider(),
-          _CartTotal(),
+          const _CartList().p32().expand(),
+          const Divider(),
+          const _CartTotal(),
         ],
       ),
     );
   }
 }
-
 class _CartTotal extends StatelessWidget {
   const _CartTotal({Key? key}) : super(key: key);
 
@@ -36,8 +36,7 @@ class _CartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_cart.totalPrice}".text.xl5.make(),
-          30.widthBox,
+          "\$${_cart.totalPrice}".text.xl5.make(),30.widthBox,
           ElevatedButton(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
@@ -51,31 +50,26 @@ class _CartTotal extends StatelessWidget {
     );
   }
 }
-
 class _CartList extends StatefulWidget {
   const _CartList({Key? key}) : super(key: key);
-
   @override
   State<_CartList> createState() => _CartListState();
 }
-
 class _CartListState extends State<_CartList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return _cart.items.isEmpty
-        ? "Nothing to show".text.xl3.makeCentered()
+    return _cart.items.isEmpty ? "Nothing to show".text.xl3.makeCentered()
         : ListView.builder(
-            itemCount: _cart.items.length,
+              itemCount: _cart.items.length,
             itemBuilder: (context, index) => ListTile(
               leading: const Icon(Icons.done),
               trailing: IconButton(
-                icon: Icon(Icons.remove_circle_outline),
+                icon: const Icon(Icons.remove_circle_outline),
                 onPressed: () {
-
+                  setState(() {});
                 },
               ),
-
               title: _cart.items[index].name.text.make(),
             ),
           );

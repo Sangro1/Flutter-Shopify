@@ -56,6 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                             labelText: "Username",
                           ),
                           validator: (value) {
+                            //bang operator is used here
                             if (value!.isEmpty) {
                               return "Username cannot be empty";
                             }
@@ -95,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(height: 20),
                         Container(
                           height: 40,
-                          child: Material(
+                          child:  Material(
                             borderRadius: BorderRadius.circular(20),
                             shadowColor: Colors.greenAccent,
                             color: Colors.black,
@@ -108,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                                           .signInWithEmailAndPassword(
                                     email: email,
                                     password: pass,
-                                  );
+                                      );
                                   Navigator.pushNamed(
                                       context, MyRoutes.homeRoute);
                                 } on FirebaseAuthException catch (e) {
@@ -118,6 +119,8 @@ class _LoginPageState extends State<LoginPage> {
                                     print(
                                         'Wrong password provided for that user.');
                                   }
+                                } catch(e){
+                                  print(e);
                                 }
                               },
                               child: Center(
@@ -125,13 +128,15 @@ class _LoginPageState extends State<LoginPage> {
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
-                                          fontFamily: 'Montserrat'))),
+                                          fontFamily: 'Montserrat'))
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(
                           height: 15,
                         ),
+                        //Google login Button activity
                         Container(
                           alignment: Alignment.center,
                           height: 50,
@@ -149,25 +154,10 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                         ),
-                        // Container(
-                        //   alignment: Alignment.center,
-                        //   height: 50,
-                        //   child: Material(
-                        //     child: GestureDetector(
-                        //       onTap: () {
-                        //
-                        //       },
-                        //       child: Image(
-                        //         image: AssetImage('assets/images/fb.png'),
-                        //       ),
-                        //
-                        //     ),
-                        //   ),
-                        // ),
-                        SizedBox(height: 5),
+                        SizedBox(height: 6),
                         Container(
                           alignment: Alignment.center,
-                          padding: EdgeInsets.only(top: 15, left: 20),
+                          padding: EdgeInsets.only(top: 10, left: 0),
                           child: InkWell(
                             child: Text(
                               'Register',
