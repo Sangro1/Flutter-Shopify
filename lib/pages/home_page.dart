@@ -48,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
        // appBar: AppBar( ),
       backgroundColor: MyTheme.creamColor,
+      //when you press it through Cart Button
       floatingActionButton: FloatingActionButton(
         onPressed: () =>
             Navigator.pushNamed(
@@ -65,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
                 CatalogList().py12().expand()
               else
+                //Loader Bar
                 CircularProgressIndicator().centered().py16(),
               //loader
             ],

@@ -25,7 +25,7 @@ class CartModel {
     _itemIds.add(item.id);
   }
 
-//will remove the product here
+//Will remove the product here
   void remove(Item item) {
     _itemIds.remove(item.id);
     _catalog;

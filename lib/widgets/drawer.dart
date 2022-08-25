@@ -1,10 +1,6 @@
-import 'package:example1/auth_service.dart';
 import 'package:example1/uti/MyTheme.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
-
 import '../uti/routes.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -12,7 +8,7 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imageUrl =
+    const imageUrl =
         "https://avatars.githubusercontent.com/u/87020382?s=400&u=fed6383984f3e8b50dd6c30eddc6129525196e6a&v=4";
 
     return Drawer(
@@ -22,14 +18,13 @@ class MyDrawer extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              // decoration: BoxDecoration(color: Colors.red[900]),
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
                 decoration: BoxDecoration(color: MyTheme.darkcreamColor),
                 accountName: const Text("Bhupesh Chouhan"),
                 accountEmail: const Text("bhupeshchouhan15@gmail.com"),
-                currentAccountPicture: CircleAvatar(
+                currentAccountPicture: const CircleAvatar(
                   //here we add camera instead of hard code
                   backgroundImage: NetworkImage(imageUrl),
                 ),

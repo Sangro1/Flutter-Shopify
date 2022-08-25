@@ -1,3 +1,4 @@
+import 'package:alert_dialog/alert_dialog.dart';
 import 'package:example1/models/cart.dart';
 import 'package:example1/models/catalog.dart';
 import 'package:example1/uti/MyTheme.dart';
@@ -27,7 +28,6 @@ class MyCart extends StatelessWidget {
 }
 class _CartTotal extends StatelessWidget {
   const _CartTotal({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final _cart = CartModel();
@@ -41,9 +41,10 @@ class _CartTotal extends StatelessWidget {
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: "Buying not supported yet".text.make()),
+
               );
             },
-            child: "Buy".text.make(),
+            child:"Buy".text.make(),
           ).w32(context),
         ],
       ),
@@ -59,6 +60,9 @@ class _CartListState extends State<_CartList> {
   final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
+
+    bool isInCart = _cart.items.contains(widget.card);
+
     return _cart.items.isEmpty ? "Nothing to show".text.xl3.makeCentered()
         : ListView.builder(
               itemCount: _cart.items.length,
@@ -66,8 +70,13 @@ class _CartListState extends State<_CartList> {
               leading: const Icon(Icons.done),
               trailing: IconButton(
                 icon: const Icon(Icons.remove_circle_outline),
-                onPressed: () {
-                  setState(() {});
+                onPressed : () {
+                 isInCart = isInCart.toggle();
+                 final _cart = CartModel();
+                 _cart.catalog = CatalogModel();
+                 setState(() {
+
+                 });
                 },
               ),
               title: _cart.items[index].name.text.make(),

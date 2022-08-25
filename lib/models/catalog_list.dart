@@ -68,6 +68,5 @@ class CatalogItem extends StatelessWidget {
         ],
       ),
     ).white.rounded.square(150).make().py16();
-    //put white/ cream colors here
   }
 }

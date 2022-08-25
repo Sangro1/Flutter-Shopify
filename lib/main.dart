@@ -17,6 +17,7 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  // await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   runApp(const MyApp());
 }
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         darkTheme: MyTheme.darkTheme(context),
         routes: {
           "/": (context) => AuthService().handleAuthState(),
-          // "/": (context) => const NewHomePage(),
+          // "/": (context) => const MyHomePage(),
 
           //calling routing class here
           MyRoutes.registerRoute: (context) => const RegisterPage(),

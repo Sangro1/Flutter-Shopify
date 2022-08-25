@@ -21,6 +21,8 @@ class AddToCartState extends State<AddToCart> {
     bool isInCart = _cart.items.contains(widget.catalog);
     return ElevatedButton(
       onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: "Item added".text.make()));
         //will remove
         isInCart = isInCart.toggle();
         final _catalog = CatalogModel();

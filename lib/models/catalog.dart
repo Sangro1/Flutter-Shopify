@@ -1,4 +1,5 @@
 class CatalogModel {
+  //singleton class
   static final catModel = CatalogModel._internal();
   CatalogModel._internal();
   factory CatalogModel() => catModel;
