@@ -3,7 +3,7 @@
         {
         "id" : 1 ,
         "name" : "iPhone12 pro",
-        "desc" : "Apple iPhone Equipped with impressive features and decent specifications",
+        "desc" : "Apple iPhone Equipped with impressive ",
         "color" : "",
         "price" : 999,
         "image" : "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSh8Ud6JJeWj4Wg4mJ14ytAOmmtmk08bFvIaxpp-d36308BmsMRBHsHibheTN70xJmsX7RjX648qT8yST3B7TW6nX9ZmK-K6qMya5NhwsM&usqp=CAc"
@@ -38,7 +38,7 @@
                 {
                         "id" : 5,
                         "name" : "Galaxy S22 Ultra",
-                        "desc" : "built-in S Pen, Nightography camera",
+                        "desc" : "Built-in S Pen, Nightography camera",
                         "color" : "",
                         "price" : 1199,
                         "image" : "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTZhKkmpWprRmqL4SSSJYCzYy3hHYxrziTWpBdB6owhtts1Wz3vMVXlKhfyF2dzp_MYpQRfg49hBDaWU3-nZnn2VSI8PIks_Nkhkryl8XekwBwJi8cDf3QNpg&usqp=CAE"
